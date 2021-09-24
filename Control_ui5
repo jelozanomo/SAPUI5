@@ -1,1 +1,33 @@
-estructura de control de SAPUI5
+Cada control en SAPUI5 tiene la misma estructura de código. Esta estructura se muestra en el código esqueleto a continuación.
+
+sap.ui.define([
+   "sap/ui/core/Control"
+], function (Control) {
+   "use strict";
+return Control.extend("sapui5.demo.mvcapp.controls.myCustomInput", {
+     metadata : {
+     },
+
+     init : function () {
+     },
+
+     onBeforeRendering : function(){
+     },
+
+     onAfterRendering : function(){
+     },
+
+     exit: function() {
+     },
+
+     renderer : function (oRM, oControl) {
+     }
+   })
+});
+
+Puede ver que los controles hacen uso de la sintaxis. En la primera parte, se declaran todas las dependencias. El parámetro de matriz 
+para las dependencias contiene al menos la clase de control básico de SAPUI5 , . Esta clase base se amplía aquí para crear un nuevo 
+control.define sap.ui.core.Control.
+
+Tenga en cuenta que los controles también pueden basarse en otros controles existentes, que se pueden ampliar. En tal caso, el control 
+que se extiende debe cargarse como una dependencia en lugar de sap.ui.core.Control.
